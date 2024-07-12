@@ -1,0 +1,139 @@
+body {
+    background: linear-gradient(270deg, #ff69b4, #ff1493, #db7093);
+    background-size: 600% 600%;
+    animation: gradientBackground 10s ease infinite;
+    font-family: 'Pacifico', cursive;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+h1 {
+    font-size: 45px;
+    margin: 160px 0 100px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: #040304;
+    animation: textAnimation 3s ease-in-out infinite;
+}
+
+@keyframes textAnimation {
+    0%, 100% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 105, 180, 0.5);
+        color: #040304;
+    }
+    50% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 105, 180, 1);
+        color: #ff69b4;
+    }
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.btn1, .btn2 {
+    font-size: 24px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease-in-out, transform 0.3s, box-shadow 0.3s;
+}
+
+.btn1 {
+    background-color: #ff69b4;
+    color: #fff;
+    animation: btn1Pulse 2s infinite;
+}
+
+@keyframes btn1Pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.btn1:hover {
+    background-color: #e5599f;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+.btn1:active {
+    transform: scale(0.95);
+}
+
+.btn2 {
+    background-color: #2d2626;
+    color: #fff;
+    animation: btn2Slide 3s infinite;
+}
+
+@keyframes btn2Slide {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(10px); }
+}
+
+.btn2:hover {
+    background-color: #777;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+.btn2:active {
+    transform: scale(0.95);
+}
+
+/* Стили для фейерверков */
+.firework {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    animation: firework 3s infinite;
+    opacity: 0;
+}
+
+@keyframes firework {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(10);
+        opacity: 0;
+    }
+}
+
+/* Mobile styles */
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 30px;
+        margin: 80px 0 50px;
+    }
+
+    .btn1, .btn2 {
+        font-size: 18px;
+        padding: 10px 20px;
+        border-radius: 20px;
+        margin: 5px;
+    }
+
+    .buttons {
+        margin-top: 20px;
+    }
+}
